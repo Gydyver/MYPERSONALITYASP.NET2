@@ -474,7 +474,7 @@ public partial class User_Home : System.Web.UI.Page
         }
 
         //Fetching Email Body Text from EmailTemplate File.  
-        string FilePath = "G:/KULIAH (CCIT)/SEMESTER 4/Quarter 8/DARI GYVER/projectMyPersonalityBeda2/projectMyPersonality/EmailTemplates/Hasil.html";
+        string FilePath = "G:/KULIAH (CCIT)/SEMESTER 4/Quarter 8/Project 2 ASP.NET MYPERSONALITY/projectMyPersonalityBeda2/projectMyPersonality/EmailTemplates/Hasil.html";
         StreamReader str2 = new StreamReader(FilePath);
         string MailText = str2.ReadToEnd();
         str2.Close();

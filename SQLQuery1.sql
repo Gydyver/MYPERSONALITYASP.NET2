@@ -26,6 +26,7 @@ id_question int not null,
 question varchar (200) not null,
 answer int,
 answer_date datetime,
+question varchar,
 status int
 )
 create table employee_table
@@ -41,48 +42,30 @@ password varchar(50) not null,
 emp_ID varchar(50) not null
 )
 
-select * from question_table
 select * from account
-select * from answer_table
-	truncate table user_table
-select * from user_table
-insert into user_table(user_email, user_name) values ('lia@gmail.com', 'lia');
-insert into account(username, password, emp_ID) values ('nurulaw', '123', 'E1');
-insert into employee_table(emp_ID, emp_name, emp_status) values ('E1', 'Nurul Awalia', 'Active');
 
---update answer_table set answer = '2' where id_answer = '1';
-
---select count(answer) from answer_table where answer = '1' and id_question = '1'
-select answer from answer_table where id_question = '1';
-
-SELECT question, answer, COUNT(answer) AS countanswer
-FROM answer_table where id_question = 3
-GROUP BY  question, answer 
-ORDER BY countanswer DESC
-
-SELECT user_personality, COUNT(user_personality) AS countpersonality  FROM user_table GROUP BY user_personality ORDER BY countpersonality DESC
-
-insert into user_table (user_name,user_email, user_personality) values ('Mindy 1','mindy1@gmail.com','ENFP')
-insert into user_table (user_name,user_email, user_personality) values ('Mindy 2','mindy2@gmail.com','ISTJ')
-insert into user_table (user_name,user_email, user_personality) values ('Mindy 3','mindy3@gmail.com','ESTJ')
-insert into user_table (user_name,user_email, user_personality) values ('Mindy 4','mindy4@gmail.com','INTJ')
-insert into user_table (user_name,user_email, user_personality) values ('Mindy 5','mindy5@gmail.com','ENTJ')
-
-delete user_table where id_user = 10
-
-SELECT distinct S.id_question, S.answer, C.cnt
-  FROM answer_table S
-       INNER JOIN (SELECT answer, count(answer) as cnt
-                     FROM answer_table 
-                    GROUP BY answer) C ON S.answer = C.answer order by id_question ASC
-
-select * from answer_table
-SELECT question, answer, COUNT(answer) AS countanswer FROM answer_table where id_question = 1 AND status = 1 GROUP BY question, answer ORDER BY countanswer DESC;
+insert into employee_table(emp_ID, emp_name, emp_status) values ('E1', 'Mindy Atikah', 'Active');
+insert into account(username, password, emp_ID) values ('mindy', '123', 'E1');
 
 
-truncate table answer_table
-use mypersonality2
 
-select * from user_table
-
-select * from question_table
+insert into question_table (category,question,question_status) values ('Introvert vs Extrovert','You enjoy spending plenty of time alone',1);
+insert into question_table (category,question,question_status) values ('Introvert vs Extrovert','Your inner monologue is hard to shut off',1);
+insert into question_table (category,question,question_status) values ('Introvert vs Extrovert','You do your best thinking alone',1);
+insert into question_table (category,question,question_status) values ('Introvert vs Extrovert','You often feel lonelier in a crowd than when you are alone',1);
+insert into question_table (category,question,question_status) values ('Introvert vs Extrovert','You feel like your faking it when you have to network',1);
+insert into question_table (category,question,question_status) values ('Sensing vs Intuiting','You prefer practical rather than theoretical course',1);
+insert into question_table (category,question,question_status) values ('Sensing vs Intuiting','You are a realistic person',1);
+insert into question_table (category,question,question_status) values ('Sensing vs Intuiting','You describe things in  literal way',1);
+insert into question_table (category,question,question_status) values ('Sensing vs Intuiting','You easily get bored talking about something abstract',1);
+insert into question_table (category,question,question_status) values ('Sensing vs Intuiting','You are a doer person',1);
+insert into question_table (category,question,question_status) values ('Thinking vs Feeling','You decide something logically',1);
+insert into question_table (category,question,question_status) values ('Thinking vs Feeling','You are a critical person',1);
+insert into question_table (category,question,question_status) values ('Thinking vs Feeling','You are opened to any critic',1);
+insert into question_table (category,question,question_status) values ('Thinking vs Feeling','You prefer see something objectively',1);
+insert into question_table (category,question,question_status) values ('Thinking vs Feeling','You are firm to a culpable person',1);
+insert into question_table (category,question,question_status) values ('Judging vs Perceiving','You like to work a to do list',1);
+insert into question_table (category,question,question_status) values ('Judging vs Perceiving','You often make a quick decision',1);
+insert into question_table (category,question,question_status) values ('Judging vs Perceiving','You like makes plans',1);
+insert into question_table (category,question,question_status) values ('Judging vs Perceiving','You feel lost direction when something appear without any plans',1);
+insert into question_table (category,question,question_status) values ('Judging vs Perceiving','You like to make sure the finishing is perfect',1);
